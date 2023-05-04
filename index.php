@@ -42,6 +42,118 @@ $hotels = [
         'distance_to_center' => 50,
         'image' => 'https://source.unsplash.com/random/?hotel,milan',
     ],
+    [
+        'name' => 'Hotel Splendido',
+        'description' => 'Hotel Splendido Descrizione',
+        'parking' => true,
+        'vote' => 3,
+        'distance_to_center' => 6.2,
+        'image' => 'https://source.unsplash.com/random/?hotel,splendid,view',
+    ],
+    [
+        'name' => 'Hotel Mediterraneo',
+        'description' => 'Hotel Mediterraneo Descrizione',
+        'parking' => true,
+        'vote' => 4,
+        'distance_to_center' => 2.5,
+        'image' => 'https://source.unsplash.com/random/?hotel,mediterranean',
+    ],
+    [
+        'name' => 'Hotel Esplanade',
+        'description' => 'Hotel Esplanade Descrizione',
+        'parking' => false,
+        'vote' => 2,
+        'distance_to_center' => 3.8,
+        'image' => 'https://source.unsplash.com/random/?hotel,esplanade',
+    ],
+    [
+        'name' => 'Hotel Royal',
+        'description' => 'Hotel Royal Descrizione',
+        'parking' => false,
+        'vote' => 5,
+        'distance_to_center' => 1.7,
+        'image' => 'https://source.unsplash.com/random/?hotel,royal',
+    ],
+    [
+        'name' => 'Hotel Oceano',
+        'description' => 'Hotel Oceano Descrizione',
+        'parking' => false,
+        'vote' => 3,
+        'distance_to_center' => 12.1,
+        'image' => 'https://source.unsplash.com/random/?hotel,ocean',
+    ],
+    [
+        'name' => 'Hotel Paradise',
+        'description' => 'Hotel Paradise Descrizione',
+        'parking' => true,
+        'vote' => 4,
+        'distance_to_center' => 8.3,
+        'image' => 'https://source.unsplash.com/random/?hotel,paradise',
+    ],
+    [
+        'name' => 'Hotel Vista Mare',
+        'description' => 'Hotel Vista Mare Descrizione',
+        'parking' => true,
+        'vote' => 5,
+        'distance_to_center' => 3.5,
+        'image' => 'https://source.unsplash.com/random/?hotel,sea,view',
+    ],
+    [
+        'name' => 'Hotel Moderno',
+        'description' => 'Hotel Moderno Descrizione',
+        'parking' => true,
+        'vote' => 3,
+        'distance_to_center' => 4.9,
+        'image' => 'https://source.unsplash.com/random/?hotel,modern',
+    ],
+    [
+        'name' => 'Hotel Miramare',
+        'description' => 'Hotel Miramare Descrizione',
+        'parking' => false,
+        'vote' => 2,
+        'distance_to_center' => 1.8,
+        'image' => 'https://source.unsplash.com/random/?hotel,beach',
+    ],
+    [
+        'name' => 'Hotel Roma',
+        'description' => 'Hotel Roma Descrizione',
+        'parking' => false,
+        'vote' => 3,
+        'distance_to_center' => 0.5,
+        'image' => 'https://source.unsplash.com/random/?hotel,roma',
+    ],
+    [
+        'name' => 'Hotel Tropicale',
+        'description' => 'Hotel Tropicale Descrizione',
+        'parking' => true,
+        'vote' => 4,
+        'distance_to_center' => 15.2,
+        'image' => 'https://source.unsplash.com/random/?hotel,tropical',
+    ],
+    [
+        'name' => 'Hotel Montagna',
+        'description' => 'Hotel Montagna Descrizione',
+        'parking' => true,
+        'vote' => 5,
+        'distance_to_center' => 20,
+        'image' => 'https://source.unsplash.com/random/?hotel,mountain',
+    ],
+    [
+        'name' => 'Hotel Lago',
+        'description' => 'Hotel Lago Descrizione',
+        'parking' => true,
+        'vote' => 2,
+        'distance_to_center' => 7.9,
+        'image' => 'https://source.unsplash.com/random/?hotel,lake',
+    ],
+    [
+        'name' => 'Hotel Fiore',
+        'description' => 'Hotel Fiore Descrizione',
+        'parking' => false,
+        'vote' => 4,
+        'distance_to_center' => 3.1,
+        'image' => 'https://source.unsplash.com/random/?hotel,flower',
+    ],
 
 ];
 
@@ -93,24 +205,31 @@ if ((empty($_GET['vote']) || $_GET['vote'] == 'all') && empty($_GET['park'])){
     <link rel="stylesheet" href="./css/master.css">
   </head>
   <body class="container">
-    <h1 class="text-center py-">Hotels</h1>
-    <div class="container py-3">
-        <form action="<?php $_SERVER['PHP_SELF'] ?>" method="GET" class="d-flex justify-content-between">
-            <div>
+    <h1 class="text-center py-4">Hotels</h1>
+    <div class="container my-2">
+        <form action="<?php $_SERVER['PHP_SELF'] ?>" method="GET" class="bg-body-tertiary py-4 px-3 rounded">
+        <div class="row row-cols-1 row-cols-md-3 align-items-center">
+                <div class="col mb-3 mb-md-0 d-md-flex align-items-center">
+                        <p class="m-md-0 pe-md-3">Valutazione </p>
+                        <select name="vote" id="vote" class="form-select">
+                            <option value="all">Tutti</option>
+                            <option value="1">1 stella</option>
+                            <option value="2">2 stelle</option>
+                            <option value="3">3 stella</option>
+                            <option value="4">4 stella</option>
+                            <option value="5">5 stella</option>
+                        </select>
+                </div>
+                <div class='col mb-3 mb-md-0'>
                     <span>Parcheggio: </span>
-                    <input type="checkbox" class="me-3" name="park">
-                    <span>Voto: </span>
-                    <select name="vote" id="vote">
-                        <option value="all">Tutti</option>
-                        <option value="1">1 stella</option>
-                        <option value="2">2 stelle</option>
-                        <option value="3">3 stella</option>
-                        <option value="4">4 stella</option>
-                        <option value="5">5 stella</option>
-                    </select>
-            </div>
-                
-                <button type="submit">Cerca</button>
+                    <input type="checkbox" class="ms-3 form-check-input" name="park">
+                </div>       
+                <div class='col mb-3 mb-md-0'>
+                    <button type="submit" class="btn btn-primary w-100">Cerca</button>
+                </div>
+                   
+        </div>
+              
         </form>
     </div>
        
