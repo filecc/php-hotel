@@ -210,14 +210,14 @@ if ((empty($_GET['vote']) || $_GET['vote'] == 'all') && empty($_GET['park'])){
         <form action="<?php $_SERVER['PHP_SELF'] ?>" method="GET" class="bg-body-tertiary py-4 px-3 rounded">
         <div class="row row-cols-1 row-cols-md-3 align-items-center">
                 <div class="col mb-3 mb-md-0 d-md-flex align-items-center">
-                        <p class="m-md-0 pe-md-3">Valutazione </p>
-                        <select name="vote" id="vote" class="form-select">
+                        <p class="m-md-0 pe-md-2">Valutazione </p>
+                        <select name="vote" id="vote" class="form-select w-100">
                             <option value="all">Tutti</option>
                             <option value="1">1 stella</option>
                             <option value="2">2 stelle</option>
-                            <option value="3">3 stella</option>
-                            <option value="4">4 stella</option>
-                            <option value="5">5 stella</option>
+                            <option value="3">3 stelle</option>
+                            <option value="4">4 stelle</option>
+                            <option value="5">5 stelle</option>
                         </select>
                 </div>
                 <div class='col mb-3 mb-md-0'>
